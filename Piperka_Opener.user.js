@@ -14,7 +14,6 @@
 	var list = document.getElementsByTagName("li");
 	var i = list.length-1
 	var up = findUpdates(list[i]);
-	alert("\\((\\d+) new\\)")
 	if(up>20){
 		alert("No minor updates available.");
 		return 0}
@@ -23,14 +22,11 @@
 		alert("The opened comics will have three or more updates.");
 		flag=1;
 	}
-	if(up<3) alert("The opened comics will have "&n&" update");
+	if(up<3) alert("The opened comics will have "+up+" update");
 	var n=up;
 	while(i>=0&&n<21&&(flag||n==up)){
 		window.open(list[i].firstChild.href);
 		i--;
 		n=findUpdates(list[i]);
 	}
-		
-	
-	
 // ==/UserScript==
